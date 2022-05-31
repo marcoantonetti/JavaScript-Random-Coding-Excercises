@@ -1,0 +1,71 @@
+/* Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+ */
+// This is the fastest solution xd. Only use a Math.max over a ...arrayOfStrings.map(x => x.length). Used a spread operator to transform the int array to just ints
+
+function findLongestWordLength(str) {
+  return Math.max(...str.split(" ").map(word => word.length));
+}
+
+/ Another fast solution is with reduce and math Max
+
+function findLongestWordLength(s) {
+  return s.split(' ')
+    .reduce(function(longest, word) {
+      return Math.max(longest, word.length)
+    }, 0);
+}
+
+
+// Eventhough is a longer solution I coded a mergeSort algorithm to practice and also to understand the memory usage efficiendy of it. Very handy for super long arrays
+
+function merge(left, right) {
+    let arr = []
+    
+    // Break out of loop if any one of the array gets empty
+    while (left.length && right.length) {
+    
+        // Pick the smaller among the smallest element of left and right sub arrays 
+        if (left[0] < right[0]) {
+            arr.push(left.shift())  
+        } else {
+            arr.push(right.shift()) 
+        }
+    }
+    
+    // Concatenating the leftover elements
+    
+    return [ ...arr, ...left, ...right ]
+}
+
+
+function mergeSort(array){
+  // Divides array by half. Then it does a recursion on the left and right array. Recursion is than as parameters of merge
+  let half = array.length/2
+
+  if (array.length < 2){
+      return array
+  }
+
+  let left = array.splice(0 , half)
+
+  return merge(mergeSort(left), mergeSort(array))
+}
+
+function findLongestWordLength(str) {
+
+  let arrayStr = str.split(' ')
+  let lengthsArray = arrayStr.map(word => word.length )
+  
+  lengthsArray = mergeSort(lengthsArray)
+  
+  
+  return lengthsArray.pop();
+}
+
+
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+
