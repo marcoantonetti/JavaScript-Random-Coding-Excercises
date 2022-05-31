@@ -1,0 +1,17 @@
+// Compares each words length to the longest variable. If the word is longer than the variable then longest gets that value. Reapeats until loops finishes
+
+function findLongestWord(str) {
+    if(typeof str !== 'string') return 'Only string data type as parameter';
+    
+    var words = str.split(' ');
+    var longest = '';
+
+    words.forEach( (word) => {
+      if (word.length > longest.length) {
+        longest = word;
+      }
+    })
+    return console.log(longest);
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
