@@ -26,7 +26,7 @@ let newArray = []
 
 for (let i in array){
 
-newArray[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1)
+newArray[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1).toLowerCase()
 
 }
 return newArray.join(' ')
