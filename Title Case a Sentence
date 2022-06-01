@@ -1,0 +1,33 @@
+/* Title Case a Sentence
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like the and of */
+
+
+// First solution
+function titleCase(str) {
+
+let array = str.split(' ')
+
+return array
+.map((word) => word.replace( word.charAt(0), word.charAt(0).toUpperCase()) )*/
+ 
+
+ 
+}
+console.log(titleCase("hello word"));
+
+// Second Solution
+function titleCase(str) {
+
+let array = str.split(' ')
+let newArray = []
+ 
+
+for (let i in array){
+
+newArray[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1)
+
+}
+return newArray.join(' ')
+}
