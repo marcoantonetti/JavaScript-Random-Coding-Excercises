@@ -15,7 +15,7 @@ return array
 
  
 }
-console.log(titleCase("hello word"));
+titleCase("hello word");
 
 // Second Solution
 function titleCase(str) {
