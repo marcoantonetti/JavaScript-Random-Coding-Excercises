@@ -10,3 +10,13 @@ Basic Javascript --> Learn all the basics and some coding excercises. I knew the
 ES6 --> All the new applications of ES6 so you can write less and do more! Learn a lot of destructuring here, new sintax and more
 
 Regular Expressions --> Learn all about ReGex and how to match regex in strings in all ways and forms
+
+basic algorithms --> excercise shown in the repo
+
+OOP 
+
+functional programing --> Learn to write declarative code
+
+intermediate algorithms --> excercises shown in the repo
+
+final excercises --> Long excercises to earn the certification
